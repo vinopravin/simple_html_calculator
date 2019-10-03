@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .keypad{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .display{
+            display: grid;
+            justify-content: end;
+        }
+        .keys{
+            justify-self: center;
+            align-self: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="display" id="display"></div>
+    <div class="keypad">
+        <div class="keys" id="key_1">1</div>
+        <div class="keys" id="key_2">2</div>
+        <div class="keys" id="key_3">3</div>
+        <div class="keys" id="key_4">4</div>
+        <div class="keys" id="key_5">5</div>
+        <div class="keys" id="key_6">6</div>
+        <div class="keys" id="key_7">7</div>
+        <div class="keys" id="key_8">8</div>
+        <div class="keys" id="key_9">9</div>
+        <div class="keys" id="key_0">0</div>
+        <div class="keys" id="key_point">.</div>
+        <div class="keys" id="key_plus">+</div>
+        <div class="keys" id="key_minus">-</div>
+        <div class="keys" id="key_divide">/</div>
+        <div class="keys" id="key_multiply">*</div>
+        <div class="keys" id="key_clear">x</div>
+        <div class="keys" id="key_calculate">=</div>
+    </div>
+</body>
+<script>
+    var display = document.getElementById('display');
+    function includeData(n) {
+        display.innerHTML += n
+    }
+    function getAnswer() {
+        var data = eval(display.innerHTML);
+        console.log('data')
+        display.innerHTML = data;
+    }
+    function clearScreen() {
+        display.innerHTML = '';
+    }
+    document.getElementById('key_1').addEventListener('click', function() { includeData(1) })
+    document.getElementById('key_2').addEventListener('click', function() { includeData(2) })
+    document.getElementById('key_3').addEventListener('click', function() { includeData(3) })
+    document.getElementById('key_4').addEventListener('click', function() { includeData(4) })
+    document.getElementById('key_5').addEventListener('click', function() { includeData(5) })
+    document.getElementById('key_6').addEventListener('click', function() { includeData(6) })
+    document.getElementById('key_7').addEventListener('click', function() { includeData(7) })
+    document.getElementById('key_8').addEventListener('click', function() { includeData(8) })
+    document.getElementById('key_9').addEventListener('click', function() { includeData(9) })
+    document.getElementById('key_0').addEventListener('click', function() { includeData(0) })
+    document.getElementById('key_point').addEventListener('click', function() { includeData('.') })
+    document.getElementById('key_plus').addEventListener('click', function() { includeData('+') })
+    document.getElementById('key_minus').addEventListener('click', function() { includeData('-') })
+    document.getElementById('key_divide').addEventListener('click', function() { includeData('/') })
+    document.getElementById('key_multiply').addEventListener('click', function() { includeData('*') })
+    document.getElementById('key_clear').addEventListener('click', function() { clearScreen() })
+    document.getElementById('key_calculate').addEventListener('click', function() { getAnswer() })
+</script>
+</html>
